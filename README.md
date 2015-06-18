@@ -1,7 +1,7 @@
 ##WheelView 滚轮控件
 
 ###Effect chart(效果图）
-![art](https://github.com/helloJp/PictureCrop/blob/master/art%2FimageCrop.gif)
+![art](https://github.com/helloJp/WheelView/blob/master/art/wheelView_shot_01.gif)
 ###desc（简述）: 
 custom view achieve wheel wheel effect. Is easy to use</br>
 自定义控件实现滚轮效果。使用方便，拥有完整的属性设置，轻松实现**联动**效果。
