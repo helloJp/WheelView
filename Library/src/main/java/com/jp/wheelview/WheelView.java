@@ -1,4 +1,4 @@
-package me.jp.wheelview.view;
+package com.jp.wheelview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -15,8 +15,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.ArrayList;
-
-import me.jp.wheelview.R;
 
 /**
  * WheelView滚轮
@@ -485,12 +483,12 @@ public class WheelView extends View {
         normalFont = attribute.getDimension(
                 R.styleable.WheelView_normalTextSize, 14.0f);
         selectedFont = attribute.getDimension(
-                R.styleable.WheelView_selecredTextSize, 22.0f);
+                R.styleable.WheelView_selectedTextSize, 22.0f);
         itemNumber = attribute.getInt(R.styleable.WheelView_itemNumber, 7);
         normalColor = attribute.getColor(
                 R.styleable.WheelView_normalTextColor, 0xff000000);
         selectedColor = attribute.getColor(
-                R.styleable.WheelView_selecredTextColor, 0xffff0000);
+                R.styleable.WheelView_selectedTextColor, 0xffff0000);
         lineColor = attribute.getColor(R.styleable.WheelView_lineColor,
                 0xff000000);
         lineWidth = attribute.getDimension(R.styleable.WheelView_lineHeight, 2f);

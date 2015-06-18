@@ -7,7 +7,7 @@
               android:orientation="horizontal"
     >
 
-    <me.jp.wheelview.view.WheelView
+    <com.jp.wheelview.WheelView
         android:id="@+id/province"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,12 +19,12 @@
         app:noEmpty="true"
         app:normalTextColor="#777"
         app:normalTextSize="14sp"
-        app:selecredTextColor="#ff000000"
-        app:selecredTextSize="22sp"
+        app:selectedTextColor="#ff000000"
+        app:selectedTextSize="22sp"
         app:unitHight="50dp"
         />
 
-    <me.jp.wheelview.view.WheelView
+    <com.jp.wheelview.WheelView
         android:id="@+id/city"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -37,8 +37,8 @@
         app:noEmpty="true"
         app:normalTextColor="#777"
         app:normalTextSize="14sp"
-        app:selecredTextColor="#ff000000"
-        app:selecredTextSize="22sp"
+        app:selectedTextColor="#ff000000"
+        app:selectedTextSize="22sp"
         app:unitHight="50dp"
         />
 

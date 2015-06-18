@@ -33,7 +33,7 @@
         android:text="reset Data"
         />
 
-    <me.jp.wheelview.view.WheelView
+    <com.jp.wheelview.WheelView
         android:id="@+id/wheelView"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -45,8 +45,8 @@
         app:noEmpty="true"
         app:normalTextColor="@android:color/holo_green_light"
         app:normalTextSize="18sp"
-        app:selecredTextColor="@android:color/holo_green_dark"
-        app:selecredTextSize="22sp"
+        app:selectedTextColor="@android:color/holo_green_dark"
+        app:selectedTextSize="22sp"
         app:unitHight="42dp"
         />
 

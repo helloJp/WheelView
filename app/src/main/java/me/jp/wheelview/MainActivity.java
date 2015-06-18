@@ -4,13 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import java.util.ArrayList;
+import com.jp.wheelview.WheelView;
 
-import me.jp.wheelview.view.WheelView;
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
     WheelView mWheelView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean mIsData1 = true;
 
     /**
-     * 重置控件数据
+     * 閲嶇疆鏁版嵁
      *
      * @param view
      */

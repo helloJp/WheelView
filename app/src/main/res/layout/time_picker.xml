@@ -8,7 +8,7 @@
     android:orientation="horizontal"
     >
 
-    <me.jp.wheelview.view.WheelView
+    <com.jp.wheelview.WheelView
         android:id="@+id/year"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,8 +19,8 @@
         app:noEmpty="true"
         app:normalTextColor="@android:color/holo_green_light"
         app:normalTextSize="14sp"
-        app:selecredTextColor="@android:color/holo_blue_dark"
-        app:selecredTextSize="22sp"
+        app:selectedTextColor="@android:color/holo_blue_dark"
+        app:selectedTextSize="22sp"
         app:unitHight="50dp"
         />
 
@@ -31,7 +31,7 @@
         android:textSize="13sp"
         />
 
-    <me.jp.wheelview.view.WheelView
+    <com.jp.wheelview.WheelView
         android:id="@+id/month"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -43,8 +43,8 @@
         app:noEmpty="true"
         app:normalTextColor="#777"
         app:normalTextSize="14sp"
-        app:selecredTextColor="#ff000000"
-        app:selecredTextSize="22sp"
+        app:selectedTextColor="#ff000000"
+        app:selectedTextSize="22sp"
         app:unitHight="50dp"
         />
 
@@ -55,7 +55,7 @@
         android:textSize="13sp"
         />
 
-    <me.jp.wheelview.view.WheelView
+    <com.jp.wheelview.WheelView
         android:id="@+id/day"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -67,8 +67,8 @@
         app:noEmpty="true"
         app:normalTextColor="@android:color/holo_orange_dark"
         app:normalTextSize="14sp"
-        app:selecredTextColor="@android:color/holo_purple"
-        app:selecredTextSize="22sp"
+        app:selectedTextColor="@android:color/holo_purple"
+        app:selectedTextSize="22sp"
         app:unitHight="50dp"
         />
 

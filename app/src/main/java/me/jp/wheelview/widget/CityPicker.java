@@ -8,11 +8,12 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
+import com.jp.wheelview.WheelView;
+
 import java.util.ArrayList;
 
-import me.jp.wheelview.util.AreaDataUtil;
 import me.jp.wheelview.R;
-import me.jp.wheelview.view.WheelView;
+import me.jp.wheelview.util.AreaDataUtil;
 
 /**
  * 省市选择器
