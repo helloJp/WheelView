@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    >
+
+    <me.jp.wheelview.view.WheelView
+        android:id="@+id/year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:itemNumber="3"
+        app:lineColor="#ff5789DC"
+        app:maskHight="32dp"
+        app:noEmpty="true"
+        app:normalTextColor="@android:color/holo_green_light"
+        app:normalTextSize="14sp"
+        app:selecredTextColor="@android:color/holo_blue_dark"
+        app:selecredTextSize="22sp"
+        app:unitHight="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="年"
+        android:textSize="13sp"
+        />
+
+    <me.jp.wheelview.view.WheelView
+        android:id="@+id/month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:itemNumber="3"
+        app:lineColor="@android:color/holo_blue_bright"
+        app:lineHeight="3dp"
+        app:maskHight="32dp"
+        app:noEmpty="true"
+        app:normalTextColor="#777"
+        app:normalTextSize="14sp"
+        app:selecredTextColor="#ff000000"
+        app:selecredTextSize="22sp"
+        app:unitHight="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="月"
+        android:textSize="13sp"
+        />
+
+    <me.jp.wheelview.view.WheelView
+        android:id="@+id/day"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:itemNumber="3"
+        app:lineColor="@android:color/darker_gray"
+        app:lineHeight="2dp"
+        app:maskHight="32dp"
+        app:noEmpty="true"
+        app:normalTextColor="@android:color/holo_orange_dark"
+        app:normalTextSize="14sp"
+        app:selecredTextColor="@android:color/holo_purple"
+        app:selecredTextSize="22sp"
+        app:unitHight="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="日"
+        android:textSize="13sp"
+        />
+</LinearLayout>
