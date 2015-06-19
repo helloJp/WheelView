@@ -519,8 +519,7 @@ public class WheelView extends View {
      * @param data
      */
     public void resetData(ArrayList<String> data) {
-        this.dataList = data;
-        initData();
+        setData(data);
         invalidate();
     }
 

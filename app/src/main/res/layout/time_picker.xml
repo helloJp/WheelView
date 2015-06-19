@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="年"
+        android:text="year"
         android:textSize="13sp"
         />
 
@@ -51,7 +51,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="月"
+        android:text="month"
         android:textSize="13sp"
         />
 
@@ -75,7 +75,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="日"
+        android:text="day"
         android:textSize="13sp"
         />
 </LinearLayout>

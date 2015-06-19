@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import me.jp.wheelview.R;
 
 /**
+ * container 3 wheelView implement timePicker
  * Created by JiangPing on 2015/6/17.
  */
 public class TimePicker extends LinearLayout {
@@ -41,51 +42,6 @@ public class TimePicker extends LinearLayout {
         mWheelDay.setData(getDayData());
     }
 
-
-    /**
-     * get selected year
-     */
-    public String getYearText() {
-        return mWheelYear.getSelectedText();
-    }
-
-    /**
-     * get selected year
-     */
-    public int getYearIndex() {
-        return mWheelYear.getSelected();
-    }
-
-    /**
-     * get selected Month
-     */
-    public String getMonthText() {
-        return mWheelMonth.getSelectedText();
-    }
-
-    /**
-     * get selected Month
-     */
-    public int getMonthIndex() {
-        return mWheelMonth.getSelected();
-    }
-
-    /**
-     * get selected year
-     */
-    public String getDayText() {
-        return mWheelDay.getSelectedText();
-    }
-
-    /**
-     * get selected Day
-     */
-    public int getDayIndex() {
-        return mWheelDay.getSelected();
-    }
-
-
-
     private ArrayList<String> getYearData() {
         ArrayList<String> list = new ArrayList<>();
         for (int i = 2015; i > 2000; i--) {
@@ -95,15 +51,15 @@ public class TimePicker extends LinearLayout {
     }
 
     private ArrayList<String> getMonthData() {
-        //这里忽略闰年、平年、月份大小 -_-|||
         ArrayList<String> list = new ArrayList<>();
-        for (int i = 1; i < 12; i++) {
+        for (int i = 1; i <= 12; i++) {
             list.add(String.valueOf(i));
         }
         return list;
     }
 
     private ArrayList<String> getDayData() {
+        //ignore condition
         ArrayList<String> list = new ArrayList<>();
         for (int i = 1; i < 31; i++) {
             list.add(String.valueOf(i));
