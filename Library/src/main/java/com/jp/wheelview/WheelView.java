@@ -10,6 +10,8 @@ import android.graphics.Rect;
 import android.graphics.Shader.TileMode;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -190,7 +192,7 @@ public class WheelView extends View {
             return;
         try {
             for (ItemObject itemObject : itemList) {
-                itemObject.drawSelf(canvas);
+                itemObject.drawSelf(canvas, getMeasuredWidth());
             }
         } catch (Exception e) {
         }
@@ -666,7 +668,7 @@ public class WheelView extends View {
         /**
          * 字体画笔
          */
-        private Paint textPaint;
+        private TextPaint textPaint;
         /**
          * 字体范围矩形
          */
@@ -679,12 +681,13 @@ public class WheelView extends View {
         /**
          * 绘制自身
          *
-         * @param canvas
+         * @param canvas         画板
+         * @param containerWidth 容器宽度
          */
-        public void drawSelf(Canvas canvas) {
+        public void drawSelf(Canvas canvas, int containerWidth) {
 
             if (textPaint == null) {
-                textPaint = new Paint();
+                textPaint = new TextPaint();
                 textPaint.setAntiAlias(true);
             }
 
@@ -709,6 +712,8 @@ public class WheelView extends View {
             }
 
             // 返回包围整个字符串的最小的一个Rect区域
+            itemText = (String) TextUtils.ellipsize(itemText, textPaint, containerWidth,
+                    TextUtils.TruncateAt.END);
             textPaint.getTextBounds(itemText, 0, itemText.length(), textRect);
             // 判断是否可视
             if (!isInView())
