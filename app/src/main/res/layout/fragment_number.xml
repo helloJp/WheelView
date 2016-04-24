@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    >
+
+    <com.jp.wheelview.WheelView
+        android:id="@+id/wheelView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:itemNumber="5"
+        app:lineColor="@android:color/holo_blue_dark"
+        app:lineHeight="1.3dp"
+        app:maskHeight="32dp"
+        app:noEmpty="true"
+        app:normalTextColor="@android:color/holo_green_light"
+        app:normalTextSize="18sp"
+        app:selectedTextColor="@android:color/holo_orange_dark"
+        app:selectedTextSize="22sp"
+        app:unitHeight="42dp"
+        />
+
+</LinearLayout>

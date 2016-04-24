@@ -12,19 +12,18 @@ import java.util.ArrayList;
 import me.jp.wheelview.R;
 
 /**
- * container 3 wheelView implement timePicker
  * Created by JiangPing on 2015/6/17.
  */
-public class TimePicker extends LinearLayout {
+public class TimePickerLayout extends LinearLayout {
     private WheelView mWheelYear;
     private WheelView mWheelMonth;
     private WheelView mWheelDay;
 
-    public TimePicker(Context context) {
+    public TimePickerLayout(Context context) {
         this(context, null);
     }
 
-    public TimePicker(Context context, AttributeSet attrs) {
+    public TimePickerLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -32,7 +31,7 @@ public class TimePicker extends LinearLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        LayoutInflater.from(getContext()).inflate(R.layout.time_picker, this);
+        LayoutInflater.from(getContext()).inflate(R.layout.layout_time_picker, this);
         mWheelYear = (WheelView) findViewById(R.id.year);
         mWheelMonth = (WheelView) findViewById(R.id.month);
         mWheelDay = (WheelView) findViewById(R.id.day);
@@ -40,11 +39,13 @@ public class TimePicker extends LinearLayout {
         mWheelYear.setData(getYearData());
         mWheelMonth.setData(getMonthData());
         mWheelDay.setData(getDayData());
+
     }
+
 
     private ArrayList<String> getYearData() {
         ArrayList<String> list = new ArrayList<>();
-        for (int i = 2015; i > 2000; i--) {
+        for (int i = 2015; i > 1990; i--) {
             list.add(String.valueOf(i));
         }
         return list;
@@ -65,5 +66,26 @@ public class TimePicker extends LinearLayout {
             list.add(String.valueOf(i));
         }
         return list;
+    }
+
+    public String getYear() {
+        if (mWheelDay == null) {
+            return null;
+        }
+        return mWheelYear.getSelectedText();
+    }
+
+    public String getMonth() {
+        if (mWheelMonth == null) {
+            return null;
+        }
+        return mWheelMonth.getSelectedText();
+    }
+
+    public String getDay() {
+        if (mWheelDay == null) {
+            return null;
+        }
+        return mWheelDay.getSelectedText();
     }
 }

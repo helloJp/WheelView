@@ -13,50 +13,49 @@ import me.jp.wheelview.R;
 import me.jp.wheelview.util.AreaDataUtil;
 
 /**
- * CityPicker
- * put two WheelView into same Linearlayout
+ * CityPickerLayout
+ * put two WheelView into  LinearLayout
  *
  * @author JiangPing
  */
-public class CityPicker extends LinearLayout {
-    private static final int REFRESH_VIEW = 0x001;
+public class CityPickerLayout extends LinearLayout {
 
     private WheelView mProvincePicker;
     private WheelView mCityPicker;
 
     private int mCurrProvinceIndex = -1;
-    private int mTemCityIndex = -1;
+    private int mCurrCityIndex = -1;
 
     private AreaDataUtil mAreaDataUtil;
-    private ArrayList<String> mProvinceList = new ArrayList<String>();
+    private ArrayList<String> mProvinceList = new ArrayList<>();
 
-    public CityPicker(Context context, AttributeSet attrs) {
+    public CityPickerLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         getAreaInfo();
     }
 
-    public CityPicker(Context context) {
+    public CityPickerLayout(Context context) {
         this(context, null);
     }
 
     private void getAreaInfo() {
-        mAreaDataUtil = new AreaDataUtil();
+        mAreaDataUtil = new AreaDataUtil(getContext());
         mProvinceList = mAreaDataUtil.getProvinces();
     }
 
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        LayoutInflater.from(getContext()).inflate(R.layout.city_picker, this);
+        LayoutInflater.from(getContext()).inflate(R.layout.layout_city_picker, this);
 
-        mProvincePicker = (WheelView) findViewById(R.id.province);
-        mCityPicker = (WheelView) findViewById(R.id.city);
+        mProvincePicker = (WheelView) findViewById(R.id.province_wv);
+        mCityPicker = (WheelView) findViewById(R.id.city_wv);
 
         mProvincePicker.setData(mProvinceList);
         mProvincePicker.setDefault(0);
 
         String defaultProvince = mProvinceList.get(0);
-        mCityPicker.setData(mAreaDataUtil.getCitysByProvince(defaultProvince));
+        mCityPicker.setData(mAreaDataUtil.getCityByProvince(defaultProvince));
         mCityPicker.setDefault(1);
 
         mProvincePicker.setOnSelectListener(new WheelView.OnSelectListener() {
@@ -69,16 +68,16 @@ public class CityPicker extends LinearLayout {
                     String selectProvince = mProvincePicker.getSelectedText();
                     if (selectProvince == null || selectProvince.equals(""))
                         return;
+
                     // get city names by province
-                    ArrayList<String> citys = mAreaDataUtil
-                            .getCitysByProvince(mProvinceList.get(id));
-                    if (citys.size() == 0) {
+                    ArrayList<String> city = mAreaDataUtil.getCityByProvince(mProvinceList.get(id));
+                    if (city.size() == 0) {
                         return;
                     }
 
-                    mCityPicker.setData(citys);
+                    mCityPicker.setData(city);
 
-                    if (citys.size() > 1) {
+                    if (city.size() > 1) {
                         //if city is more than one,show start index == 1
                         mCityPicker.setDefault(1);
                     } else {
@@ -99,8 +98,8 @@ public class CityPicker extends LinearLayout {
             public void endSelect(int id, String text) {
                 if (text.equals("") || text == null)
                     return;
-                if (mTemCityIndex != id) {
-                    mTemCityIndex = id;
+                if (mCurrCityIndex != id) {
+                    mCurrCityIndex = id;
                     String selectCity = mCityPicker.getSelectedText();
                     if (selectCity == null || selectCity.equals(""))
                         return;
@@ -116,7 +115,20 @@ public class CityPicker extends LinearLayout {
 
             }
         });
+    }
 
+    public String getProvince() {
+        if (mProvincePicker == null) {
+            return null;
+        }
+        return mProvincePicker.getSelectedText();
+    }
+
+    public String getCity() {
+        if (mCityPicker == null) {
+            return null;
+        }
+        return mCityPicker.getSelectedText();
     }
 
 }
