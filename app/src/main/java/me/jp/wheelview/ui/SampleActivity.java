@@ -3,16 +3,16 @@ package me.jp.wheelview.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
 import me.jp.wheelview.R;
+import me.jp.wheelview.ui.fragment.CityFragment;
 import me.jp.wheelview.ui.fragment.OtherFragment;
 import me.jp.wheelview.ui.fragment.TimeFragment;
-import me.jp.wheelview.ui.fragment.CityFragment;
 
 /**
  * Created by jiangp on 16/4/20.
@@ -47,7 +47,6 @@ public class SampleActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                logDebug("=========onItemSelected ======" + pos);
                 switch (pos) {
                     case 0:
                         replaceFragment(R.id.fragment, mCityFragment);
@@ -72,28 +71,18 @@ public class SampleActivity extends AppCompatActivity {
         if (targetFragment.equals(mCurrFragment)) {
             return;
         }
-        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-                .beginTransaction();
+       FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if (!targetFragment.isAdded()) {
-            transaction.add(resView, targetFragment, targetFragment.getClass()
-                    .getName());
+            transaction.add(resView, targetFragment, targetFragment.getClass().getName());
         }
         if (targetFragment.isHidden()) {
             transaction.show(targetFragment);
         }
-        if (mCurrFragment != null
-                && mCurrFragment.isVisible()) {
+        if (mCurrFragment != null && mCurrFragment.isVisible()) {
             transaction.hide(mCurrFragment);
         }
         mCurrFragment = targetFragment;
         transaction.commit();
-    }
-
-    private void logDebug(String msg) {
-        if (msg == null) {
-            return;
-        }
-        Log.i("debug", msg);
     }
 
 }

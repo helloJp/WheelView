@@ -1,12 +1,30 @@
-##WheelView 滚轮控件
+#WheelView 滚轮控件
+**WheelView仿IOS的滑动选择器**
 
-###Effect chart(效果图）
-![art](https://github.com/helloJp/WheelView/blob/master/art/wheelView_shot_01.gif)
-###desc（简述）: 
-custom view achieve wheel wheel effect. Is easy to use</br>
-自定义控件实现滚轮效果。使用方便，拥有完整的属性设置，轻松实现**联动**效果。
+* 继承自View，绘制所有的显示。
+* 监听手势来移动（根据新坐标重新绘制）itemObject。
+* 单个控件（一个类实现了滚轮效果），拓展性较强。
 
-###Include the WheelView widget in your layout(在布局中放入WheelView控件). 
+> 这里说明一下的是WheelView只能实现一个滚轮，联动效果 可通过多个WheelView的组合使用（issues里面有人反馈这个问题😂）
+
+###效果图：
+* CityPicker
+
+![cityPicker](http://7xtd3c.com2.z0.glb.clouddn.com/wheelView-shot01.gif)
+
+* TimePicker
+
+![timePicker](http://7xtd3c.com2.z0.glb.clouddn.com/wheelView-shot02.gif)
+
+
+###坐标图
+
+下图为控件中心位置的itemObject居中时的简易坐标图。
+
+![item_coordinate](http://7xtd3c.com2.z0.glb.clouddn.com/wheelView-chart_wheelView_item_coordinate.png)
+
+
+### 在布局中放入WheelView控件
 
 ```
 <me.jp.wheelview.view.WheelView
@@ -14,13 +32,13 @@ custom view achieve wheel wheel effect. Is easy to use</br>
     android:layout_height="wrap_content"
     app:itemNumber="6"
     app:lineColor="#ff5789DC"
-    app:maskHight="32dp"
+    app:maskHeight="32dp"
     app:noEmpty="true"
     app:normalTextColor="#777"
     app:normalTextSize="14sp"
     app:selectedTextColor="#ff000000"
     app:selectedTextSize="22sp"
-    app:unitHight="50dp"
+    app:unitHeight="50dp"
     />
 ```
 
@@ -28,28 +46,27 @@ custom view achieve wheel wheel effect. Is easy to use</br>
 
 There are several attributes you can set:
 
-
 | attr 属性          | description 描述 |
 |:---				 |:---|
 | lineColor  	     | divider line color 分割线颜色 |
 | lineHeight  	     | divider line height 分割线高度 |
 | itemNumber	 	 | wheelview show item count 此wheelView显示item的个数 |
-| maskHight 		 | mask height 蒙版高度（normalText的位置） |
+| maskHeight 		 | mask height 蒙版高度（normalText的位置） |
 | noEmpty 			 | if set true select area can't be null(empty),or could be empty 设置true则选中不能为空，否则可以是空 |
 | normalTextColor 	 | unSelected Text color 未选中文本颜色 |
 | normalTextSize 	 | unSelected Text size 未选中文本字体大小 |
 | selectedTextColor | selected Text color 选中文本颜色 |
 | selectedTextSize 	 | selected Text size 选中文本字体大小 |
-| unitHight 		 | item unit height 每个item单元的高度 |
+| unitHeight 		 | item unit height 每个item单元的高度 |
 
 #Method
 ###1. setData(ArrayList<String> data)
 set WheelView data</br> 
 设置WheelView的数据
 
-###2. resetData(ArrayList<String> data) 
-**reset** WheelView data ,if you has setData</br>
-**重置** WheelView的数据，如果已经设置过的话
+###2. refreshData(ArrayList<String> data) 
+**refresh** WheelView data ,and draw again</br>
+**刷新** WheelView的数据，并重绘
 
 ###3. int getSelected()
 get selected item index</br>

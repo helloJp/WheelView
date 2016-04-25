@@ -13,7 +13,6 @@ import android.os.Message;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -196,7 +195,6 @@ public class WheelView extends View {
         controlWidth = getWidth();
         if (controlWidth != 0) {
             setMeasuredDimension(getWidth(), itemNumber * unitHeight);
-//            controlWidth = getWidth();
         }
     }
 
@@ -277,7 +275,7 @@ public class WheelView extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 int move = Math.abs(y - downY);
-                // 判断段时间移动的距离
+                // 判断这段时间移动的距离
                 if (System.currentTimeMillis() - downTime < goonTime && move > goonDistance) {
                     goonMove(y - downY);
                 } else {
@@ -787,13 +785,5 @@ public class WheelView extends View {
          */
         void selecting(int id, String text);
 
-    }
-
-
-    private void logDebug(String msg) {
-        if (msg == null) {
-            return;
-        }
-        Log.i("debug", msg);
     }
 }

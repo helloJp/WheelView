@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@android:color/holo_green_light"
         android:gravity="center"
         />
 
@@ -26,12 +25,13 @@
         />
 
     <TextView
+        android:id="@+id/select_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
+        android:gravity="center"
         android:padding="10dp"
-        android:id="@+id/select_tv"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
         />
 
 </LinearLayout>
