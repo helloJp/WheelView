@@ -280,9 +280,9 @@ public class WheelView extends View {
                     goonMove(y - downY);
                 } else {
                     actionUp(y - downY);
+                    noEmpty();
+                    isScrolling = false;
                 }
-                noEmpty();
-                isScrolling = false;
                 break;
             default:
                 break;
