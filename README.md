@@ -1,4 +1,4 @@
-#WheelView 滚轮控件
+# WheelView 滚轮控件
 **WheelView仿IOS的滑动选择器**
 
 * 继承自View，绘制所有的显示。
@@ -7,7 +7,7 @@
 
 > 这里说明一下的是WheelView只能实现一个滚轮，联动效果 可通过多个WheelView的组合使用（issues里面有人反馈这个问题😂）
 
-###效果图：
+### 效果图：
 * CityPicker
 
 ![cityPicker](http://7xtd3c.com2.z0.glb.clouddn.com/wheelView-shot01.gif)
@@ -17,7 +17,7 @@
 ![timePicker](http://7xtd3c.com2.z0.glb.clouddn.com/wheelView-shot02.gif)
 
 
-###坐标图
+### 坐标图
 
 下图为控件中心位置的itemObject居中时的简易坐标图。
 
@@ -59,47 +59,47 @@ There are several attributes you can set:
 | selectedTextSize 	 | selected Text size 选中文本字体大小 |
 | unitHeight 		 | item unit height 每个item单元的高度 |
 
-#Method
-###1. setData(ArrayList<String> data)
+# Method
+### 1. setData(ArrayList<String> data)
 set WheelView data</br> 
 设置WheelView的数据
 
-###2. refreshData(ArrayList<String> data) 
+### 2. refreshData(ArrayList<String> data) 
 **refresh** WheelView data ,and draw again</br>
 **刷新** WheelView的数据，并重绘
 
-###3. int getSelected()
+### 3. int getSelected()
 get selected item index</br>
 获取选中项的index
 
-###4. String getSelectedText()
+### 4. String getSelectedText()
 get selected item text</br>
 获取选中项的文本信息
 
-###5. boolean isScrolling
+### 5. boolean isScrolling
 is WheelView is scrolling</br>
 获取WheelView是否在滚动中
 
-###6. boolean isEnable()
+### 6. boolean isEnable()
 is WheelView is enable</br>
 获取wheelView是否可用
 
-###7. void setEnable(boolean isEnable)  
+### 7. void setEnable(boolean isEnable)  
 set WheelView enable</br>
 设置WheelView是否可用
 
-###8. void setDefault(int index)
+### 8. void setDefault(int index)
 set **default selected index**</br>
 设置**默认选中项的index**
  
-###9. int getListSize() 
+### 9. int getListSize() 
 get WheelView item count</br>
 获取WheelView的item项个数
 
-###10. String getItemText(int index)
+### 10. String getItemText(int index)
 get the text by index </br>
 获取index位置上的文本数据
 
-###11. void setOnSelectListener(OnSelectListener onSelectListener)
+### 11. void setOnSelectListener(OnSelectListener onSelectListener)
 set listener on WheelView that can get info when WheelView is **scrolling** or **stop scroll**.</br>
 对WheelView**设置监听**，在 **滑动过程** 或者 **滑动停止** 返回数据信息。
